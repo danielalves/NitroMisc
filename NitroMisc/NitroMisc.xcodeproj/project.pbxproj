@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		128E5BE4197813C6002F9447 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128E5BE3197813C6002F9447 /* Foundation.framework */; };
+		128E5BE9197813C6002F9447 /* NitroMisc.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 128E5BE8197813C6002F9447 /* NitroMisc.h */; };
+		128E5BEB197813C6002F9447 /* NitroMisc.m in Sources */ = {isa = PBXBuildFile; fileRef = 128E5BEA197813C6002F9447 /* NitroMisc.m */; };
+		128E5BF2197813C6002F9447 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128E5BF1197813C6002F9447 /* XCTest.framework */; };
+		128E5BF3197813C6002F9447 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128E5BE3197813C6002F9447 /* Foundation.framework */; };
+		128E5BF5197813C6002F9447 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128E5BF4197813C6002F9447 /* UIKit.framework */; };
+		128E5BF8197813C6002F9447 /* libNitroMisc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 128E5BE0197813C6002F9447 /* libNitroMisc.a */; };
+		128E5BFE197813C6002F9447 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 128E5BFC197813C6002F9447 /* InfoPlist.strings */; };
+		128E5C00197813C6002F9447 /* NitroMiscTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 128E5BFF197813C6002F9447 /* NitroMiscTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		128E5BF6197813C6002F9447 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 128E5BD8197813C6002F9447 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 128E5BDF197813C6002F9447;
+			remoteInfo = NitroMisc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		128E5BDE197813C6002F9447 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				128E5BE9197813C6002F9447 /* NitroMisc.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		128E5BE0197813C6002F9447 /* libNitroMisc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNitroMisc.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		128E5BE3197813C6002F9447 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		128E5BE7197813C6002F9447 /* NitroMisc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NitroMisc-Prefix.pch"; sourceTree = "<group>"; };
+		128E5BE8197813C6002F9447 /* NitroMisc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NitroMisc.h; sourceTree = "<group>"; };
+		128E5BEA197813C6002F9447 /* NitroMisc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NitroMisc.m; sourceTree = "<group>"; };
+		128E5BF0197813C6002F9447 /* NitroMiscTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NitroMiscTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		128E5BF1197813C6002F9447 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		128E5BF4197813C6002F9447 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		128E5BFB197813C6002F9447 /* NitroMiscTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NitroMiscTests-Info.plist"; sourceTree = "<group>"; };
+		128E5BFD197813C6002F9447 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		128E5BFF197813C6002F9447 /* NitroMiscTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NitroMiscTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		128E5BDD197813C6002F9447 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128E5BE4197813C6002F9447 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		128E5BED197813C6002F9447 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128E5BF8197813C6002F9447 /* libNitroMisc.a in Frameworks */,
+				128E5BF2197813C6002F9447 /* XCTest.framework in Frameworks */,
+				128E5BF5197813C6002F9447 /* UIKit.framework in Frameworks */,
+				128E5BF3197813C6002F9447 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		128E5BD7197813C6002F9447 = {
+			isa = PBXGroup;
+			children = (
+				128E5BE5197813C6002F9447 /* NitroMisc */,
+				128E5BF9197813C6002F9447 /* NitroMiscTests */,
+				128E5BE2197813C6002F9447 /* Frameworks */,
+				128E5BE1197813C6002F9447 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		128E5BE1197813C6002F9447 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				128E5BE0197813C6002F9447 /* libNitroMisc.a */,
+				128E5BF0197813C6002F9447 /* NitroMiscTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		128E5BE2197813C6002F9447 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				128E5BE3197813C6002F9447 /* Foundation.framework */,
+				128E5BF1197813C6002F9447 /* XCTest.framework */,
+				128E5BF4197813C6002F9447 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		128E5BE5197813C6002F9447 /* NitroMisc */ = {
+			isa = PBXGroup;
+			children = (
+				128E5BE8197813C6002F9447 /* NitroMisc.h */,
+				128E5BEA197813C6002F9447 /* NitroMisc.m */,
+				128E5BE6197813C6002F9447 /* Supporting Files */,
+			);
+			path = NitroMisc;
+			sourceTree = "<group>";
+		};
+		128E5BE6197813C6002F9447 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				128E5BE7197813C6002F9447 /* NitroMisc-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		128E5BF9197813C6002F9447 /* NitroMiscTests */ = {
+			isa = PBXGroup;
+			children = (
+				128E5BFF197813C6002F9447 /* NitroMiscTests.m */,
+				128E5BFA197813C6002F9447 /* Supporting Files */,
+			);
+			path = NitroMiscTests;
+			sourceTree = "<group>";
+		};
+		128E5BFA197813C6002F9447 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				128E5BFB197813C6002F9447 /* NitroMiscTests-Info.plist */,
+				128E5BFC197813C6002F9447 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		128E5BDF197813C6002F9447 /* NitroMisc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 128E5C03197813C6002F9447 /* Build configuration list for PBXNativeTarget "NitroMisc" */;
+			buildPhases = (
+				128E5BDC197813C6002F9447 /* Sources */,
+				128E5BDD197813C6002F9447 /* Frameworks */,
+				128E5BDE197813C6002F9447 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NitroMisc;
+			productName = NitroMisc;
+			productReference = 128E5BE0197813C6002F9447 /* libNitroMisc.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		128E5BEF197813C6002F9447 /* NitroMiscTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 128E5C06197813C6002F9447 /* Build configuration list for PBXNativeTarget "NitroMiscTests" */;
+			buildPhases = (
+				128E5BEC197813C6002F9447 /* Sources */,
+				128E5BED197813C6002F9447 /* Frameworks */,
+				128E5BEE197813C6002F9447 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				128E5BF7197813C6002F9447 /* PBXTargetDependency */,
+			);
+			name = NitroMiscTests;
+			productName = NitroMiscTests;
+			productReference = 128E5BF0197813C6002F9447 /* NitroMiscTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		128E5BD8197813C6002F9447 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Daniel L. Alves";
+			};
+			buildConfigurationList = 128E5BDB197813C6002F9447 /* Build configuration list for PBXProject "NitroMisc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 128E5BD7197813C6002F9447;
+			productRefGroup = 128E5BE1197813C6002F9447 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				128E5BDF197813C6002F9447 /* NitroMisc */,
+				128E5BEF197813C6002F9447 /* NitroMiscTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		128E5BEE197813C6002F9447 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128E5BFE197813C6002F9447 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		128E5BDC197813C6002F9447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128E5BEB197813C6002F9447 /* NitroMisc.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		128E5BEC197813C6002F9447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128E5C00197813C6002F9447 /* NitroMiscTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		128E5BF7197813C6002F9447 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 128E5BDF197813C6002F9447 /* NitroMisc */;
+			targetProxy = 128E5BF6197813C6002F9447 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		128E5BFC197813C6002F9447 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				128E5BFD197813C6002F9447 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		128E5C01197813C6002F9447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		128E5C02197813C6002F9447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		128E5C04197813C6002F9447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/NitroMisc.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NitroMisc/NitroMisc-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		128E5C05197813C6002F9447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/NitroMisc.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NitroMisc/NitroMisc-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		128E5C07197813C6002F9447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NitroMisc/NitroMisc-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NitroMiscTests/NitroMiscTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		128E5C08197813C6002F9447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NitroMisc/NitroMisc-Prefix.pch";
+				INFOPLIST_FILE = "NitroMiscTests/NitroMiscTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		128E5BDB197813C6002F9447 /* Build configuration list for PBXProject "NitroMisc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128E5C01197813C6002F9447 /* Debug */,
+				128E5C02197813C6002F9447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		128E5C03197813C6002F9447 /* Build configuration list for PBXNativeTarget "NitroMisc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128E5C04197813C6002F9447 /* Debug */,
+				128E5C05197813C6002F9447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		128E5C06197813C6002F9447 /* Build configuration list for PBXNativeTarget "NitroMiscTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128E5C07197813C6002F9447 /* Debug */,
+				128E5C08197813C6002F9447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 128E5BD8197813C6002F9447 /* Project object */;
+}
