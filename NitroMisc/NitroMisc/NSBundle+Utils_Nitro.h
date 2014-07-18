@@ -30,7 +30,7 @@
 +( NSString * )applicationVersion;
 
 /**
- *  Searches the bundle (self) and reads all key-value pairs contained in a property list into a dictionary.
+ *  Searches the bundle and reads all key-value pairs contained in a property list into a dictionary.
  *
  *  @param name The name of the plist file without its extension. Ex: for a file named 'Info.plist',
  *  you should pass @"Info"
@@ -55,7 +55,7 @@
  *                  is the first file encountered that exactly matches name.
  *
  *  @return A string created by reading data from the file named by name and type using the specified encoding. 
- *  If the file can’t be opened or there is an encoding error, returns nil.
+ *          If the file can’t be opened or there is an encoding error, returns nil.
  */
 -( NSString * )stringWithEncoding:( NSStringEncoding )encoding fromResourceWithName:( NSString * )name type:( NSString * )type;
 
