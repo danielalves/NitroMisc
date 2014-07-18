@@ -8,22 +8,17 @@
 
 #import "NSInvocation+Utils_Nitro.h"
 
-#pragma mark - Defines
+#pragma mark - Consts
 
 //
 // See NSInvocation documentation:
 // "... Use indices 2 and greater for the arguments normally passed in a message..."
 //
-#define FIRST_ARGUMENT_INDEX 2
+const NSInteger kNitroNSInvovationFirstArgumentIndex = 2;
 
 #pragma mark - Implementation
 
 @implementation NSInvocation( Utils_Nitro )
-
-+( NSInteger )firstArgumentIndex
-{
-	return FIRST_ARGUMENT_INDEX;
-}
 
 +( NSInvocation * )invocationForSelector:( SEL )selector withTarget:( NSObject * )target
 {
