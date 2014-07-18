@@ -14,7 +14,7 @@
 #import <NitroMisc/NSBundle+Utils_Nitro.h>
 #import <NitroMisc/NSError+Utils_Nitro.h>
 #import <NitroMisc/NSInvocation+Utils_Nitro.h>
-#import <NitroMisc/NSString+Logger_Nitro.h>
+#import <NitroMisc/NTRLogging>
 #import <NitroMisc/NTRMacros.h>
 #import <NitroMisc/NTRSynthesizeSingleton.h>
 
