@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 
 // NitroMisc
-#import "NSString+Logger_Nitro.h"
+#import "NTRLogging.h"
 
 #pragma mark - Interface
 
@@ -43,28 +43,34 @@
 
 -( void )test_NTR_LOG_logs_message
 {
-    [self assertLoggedMessage: @"test" afterRunningLogMacroInsideBlock: ^{ NTR_LOG( @"test" ); }];
-    [self assertLoggedMessage: @"test 1, 2, 3" afterRunningLogMacroInsideBlock: ^{ NTR_LOG( @"test %d, %d, %d", 1, 2, 3 ); }];
+    [self assertDidLogMessage: @"test" afterRunningLogMacroInsideBlock: ^{ NTR_LOG( @"test" ); }];
+    [self assertDidLogMessage: @"test 1, 2, 3" afterRunningLogMacroInsideBlock: ^{ NTR_LOG( @"test %d, %d, %d", 1, 2, 3 ); }];
+}
+
+-( void )test_NTR_LOG_prepends_caller_method_name_to_log_message
+{
+    NSString *expected = @"-[NitroNSStringLoggerTests test_NTR_LOG_prepends_caller_method_name_to_log_message]_block_invoke:\n\ttest";
+    [self assertDidLogMessage: expected afterRunningLogMacroInsideBlock: ^{ NTR_LOG( @"test" ); }];
 }
 
 -( void )test_NTR_LOGI_prepends_INFO_string
 {
-    [self assertLoggedMessage: @"INFO: test" afterRunningLogMacroInsideBlock: ^{ NTR_LOGI( @"test" ); }];
+    [self assertDidLogMessage: @"INFO: test" afterRunningLogMacroInsideBlock: ^{ NTR_LOGI( @"test" ); }];
 }
 
 -( void )test_NTR_LOGW_prepends_WARNING_string
 {
-    [self assertLoggedMessage: @"WARNING: test" afterRunningLogMacroInsideBlock: ^{ NTR_LOGW( @"test" ); }];
+    [self assertDidLogMessage: @"WARNING: test" afterRunningLogMacroInsideBlock: ^{ NTR_LOGW( @"test" ); }];
 }
 
 -( void )test_NTR_LOGE_prepends_ERROR_string
 {
-    [self assertLoggedMessage: @"ERROR: test" afterRunningLogMacroInsideBlock: ^{ NTR_LOGE( @"test" ); }];
+    [self assertDidLogMessage: @"ERROR: test" afterRunningLogMacroInsideBlock: ^{ NTR_LOGE( @"test" ); }];
 }
 
 #pragma mark - Helpers
 
--( void )assertLoggedMessage:( NSString * )message afterRunningLogMacroInsideBlock:( void (^)( void ))logMacroBlock
+-( void )assertDidLogMessage:( NSString * )message afterRunningLogMacroInsideBlock:( void (^)( void ))logMacroBlock
 {
     NSString *documentsFolderPath = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES ) lastObject];
     NSString *filePath = [documentsFolderPath stringByAppendingPathComponent: @"test.txt"];

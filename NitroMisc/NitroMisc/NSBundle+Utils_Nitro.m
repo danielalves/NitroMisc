@@ -9,7 +9,7 @@
 #import "NSBundle+Utils_Nitro.h"
 
 // NitroMisc
-#import "NSString+Logger_Nitro.h"
+#import "NTRLogging.h"
 
 #pragma mark - Implementation
 
