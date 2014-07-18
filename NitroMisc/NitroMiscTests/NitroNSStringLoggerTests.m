@@ -9,7 +9,6 @@
 #import <XCTest/XCTest.h>
 
 // NitroMisc
-#import "fmemopen.h"
 #import "NSString+Logger_Nitro.h"
 
 #pragma mark - Interface
