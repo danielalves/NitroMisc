@@ -1,0 +1,8 @@
+target :NitroMisc do
+    platform :ios, '4.3'
+end
+
+target :NitroMiscTests do
+    platform :ios, '7.1'
+	pod "Redefine"
+end
