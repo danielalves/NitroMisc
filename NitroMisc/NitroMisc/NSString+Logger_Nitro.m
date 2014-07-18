@@ -12,14 +12,23 @@
 
 @implementation NSString( Logger_Nitro )
 
-+( void )log:( NSString * )format, ...
++( void )nitroLog:( NSString * )format, ...
 {
-	va_list params;
+    va_list params;
 	va_start( params, format );
-
-	NSLogv( format, params );
-	
-	va_end( params );
+    
+    @try
+    {
+        NSLogv( format, params );
+    }
+    @catch( NSException *ex )
+    {
+        @throw ex;
+    }
+    @finally
+    {
+        va_end( params );
+    }
 }
 
 @end

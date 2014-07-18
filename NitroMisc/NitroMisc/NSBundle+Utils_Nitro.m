@@ -51,7 +51,7 @@
 		plist = nil;
 		errorDesc = nil;
 		
-        LOGE( @"%@", errMsg );
+        NTR_LOGE( @"%@", errMsg );
 
 		[NSException raise: NSInternalInconsistencyException format: @"%@", errMsg];
     }
@@ -67,7 +67,7 @@
     
     if( error )
     {
-        LOGE( @"%@", [error localizedDescription] );
+        NTR_LOGE( @"%@", [error localizedDescription] );
         return nil;
     }
     
