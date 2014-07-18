@@ -13,13 +13,19 @@
  */
 @interface NSError( Utils_Nitro )
 
-+( NSError * )errorWithCode:( NSInteger )code
-                    domain:( NSString * )domain
-   andLocalizedDescription:( NSString * )description;
-
-+( NSError * )errorWithCode:( NSInteger )code
-                    domain:( NSString * )domain
-      localizedDescription:( NSString * )description
-               andUserInfo:( NSDictionary * )userInfo;
+/**
+ *  Creates a NSError object with the specified domain, code and localized description.
+ *
+ *  @param domain               A string containing the error domain.
+ *  @param code                 The error code. Note that error codes are domain specific.
+ *  @param localizedDescription A localized string representation of the error that, if present, will be returned by the
+ *                              localizedDescription method. This value will be set in the NSError object userInfo dictionary
+ *                              with the NSLocalizedDescriptionKey.
+ *
+ *  @return A NSError object with the specified domain, code and localized description.
+ */
++( NSError * )errorWithDomain:( NSString * )domain
+                         code:( NSInteger )code
+         localizedDescription:( NSString * )localizedDescription;
 
 @end

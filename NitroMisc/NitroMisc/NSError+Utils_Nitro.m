@@ -12,23 +12,11 @@
 
 @implementation NSError( Utils_Nitro )
 
-+( NSError * )errorWithCode:( NSInteger )code domain:( NSString * )domain andLocalizedDescription:( NSString * )description
++( NSError * )errorWithDomain:( NSString * )domain
+                         code:( NSInteger )code
+         localizedDescription:( NSString * )localizedDescription
 {
-    return [NSError errorWithCode: code
-                           domain: domain
-             localizedDescription: description
-                      andUserInfo: nil];
-}
-
-+( NSError * )errorWithCode:( NSInteger )code
-                    domain:( NSString * )domain
-      localizedDescription:( NSString * )description
-               andUserInfo:( NSDictionary * )userInfo
-{
-    NSMutableDictionary *finalUserInfo = [NSMutableDictionary dictionaryWithDictionary: userInfo];
-    [finalUserInfo setObject: description forKey: NSLocalizedDescriptionKey];
-    
-	return [NSError errorWithDomain: domain code: code userInfo: finalUserInfo];
+    return [NSError errorWithDomain: domain code: code userInfo: @{ NSLocalizedDescriptionKey: localizedDescription }];
 }
 
 @end
