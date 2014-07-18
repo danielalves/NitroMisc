@@ -25,4 +25,4 @@ DerivedData
 *.orig
 
 # CocoaPods
-# Remove Pods dir if necessary ...
+*/Pods
