@@ -1,5 +1,5 @@
 //
-//  NSString+Logger.m
+//  NSString+Logger_Nitro.m
 //  NitroMisc
 //
 //  Created by Daniel L. Alves on 09/04/11.

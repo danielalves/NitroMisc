@@ -1,5 +1,5 @@
 //
-//  NSInvocationUtils_Nitro.h
+//  NSInvocation+Utils_Nitro.h
 //  NitroMisc
 //
 //  Created by Daniel L. Alves on 15/02/12.
@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  Utility methods for NSInvocation Foundation class
+ */
 @interface NSInvocation( Utils_Nitro )
 
 +( NSInteger )firstArgumentIndex;

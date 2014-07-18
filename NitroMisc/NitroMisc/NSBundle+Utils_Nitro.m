@@ -1,5 +1,5 @@
 //
-//  NSBundleUtils_Nitro.m
+//  NSBundle+Utils_Nitro.m
 //  NitroMisc
 //
 //  Created by Daniel L. Alves on 18/09/11.

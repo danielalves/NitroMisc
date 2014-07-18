@@ -1,5 +1,5 @@
 //
-//  NSBundle+NSBundleUtils_mm.h
+//  NSBundle+Utils_Nitro.h
 //  NitroMisc
 //
 //  NitroMisc by Daniel L. Alves on 18/09/11.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- *  @category Utils_Nitro
+ *  Utility methods for NSBundle Foundation class
  */
 @interface NSBundle( Utils_Nitro )
 

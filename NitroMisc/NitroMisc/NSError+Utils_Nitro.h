@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  Utility methods for NSError Foundation class
+ */
 @interface NSError( Utils_Nitro )
 
 +( NSError * )errorWithCode:( NSInteger )code
