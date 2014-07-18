@@ -17,7 +17,6 @@
 		128E5C2719798597002F9447 /* NSBundle+Utils_Nitro.m in Sources */ = {isa = PBXBuildFile; fileRef = 128E5C1E19798597002F9447 /* NSBundle+Utils_Nitro.m */; };
 		128E5C2819798597002F9447 /* NSError+Utils_Nitro.m in Sources */ = {isa = PBXBuildFile; fileRef = 128E5C2019798597002F9447 /* NSError+Utils_Nitro.m */; };
 		128E5C2919798597002F9447 /* NSInvocation+Utils_Nitro.m in Sources */ = {isa = PBXBuildFile; fileRef = 128E5C2219798597002F9447 /* NSInvocation+Utils_Nitro.m */; };
-		128E5C2A19798597002F9447 /* NSString+Logger_Nitro.m in Sources */ = {isa = PBXBuildFile; fileRef = 128E5C2419798597002F9447 /* NSString+Logger_Nitro.m */; };
 		FE6929E5313F4884A151E917 /* libPods-NitroMiscTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BE2FE5B0F846579EE40710 /* libPods-NitroMiscTests.a */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +59,6 @@
 		128E5C2119798597002F9447 /* NSInvocation+Utils_Nitro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+Utils_Nitro.h"; sourceTree = "<group>"; };
 		128E5C2219798597002F9447 /* NSInvocation+Utils_Nitro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+Utils_Nitro.m"; sourceTree = "<group>"; };
 		128E5C2319798597002F9447 /* NSString+Logger_Nitro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Logger_Nitro.h"; sourceTree = "<group>"; };
-		128E5C2419798597002F9447 /* NSString+Logger_Nitro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Logger_Nitro.m"; sourceTree = "<group>"; };
 		128E5C2519798597002F9447 /* NTRMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTRMacros.h; sourceTree = "<group>"; };
 		128E5C2619798597002F9447 /* NTRSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTRSynthesizeSingleton.h; sourceTree = "<group>"; };
 		79BE2FE5B0F846579EE40710 /* libPods-NitroMiscTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NitroMiscTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +130,6 @@
 				128E5C2119798597002F9447 /* NSInvocation+Utils_Nitro.h */,
 				128E5C2219798597002F9447 /* NSInvocation+Utils_Nitro.m */,
 				128E5C2319798597002F9447 /* NSString+Logger_Nitro.h */,
-				128E5C2419798597002F9447 /* NSString+Logger_Nitro.m */,
 				128E5C2519798597002F9447 /* NTRMacros.h */,
 				128E5C2619798597002F9447 /* NTRSynthesizeSingleton.h */,
 			);
@@ -268,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				128E5C2A19798597002F9447 /* NSString+Logger_Nitro.m in Sources */,
 				128E5C2819798597002F9447 /* NSError+Utils_Nitro.m in Sources */,
 				128E5C2719798597002F9447 /* NSBundle+Utils_Nitro.m in Sources */,
 				128E5C2919798597002F9447 /* NSInvocation+Utils_Nitro.m in Sources */,

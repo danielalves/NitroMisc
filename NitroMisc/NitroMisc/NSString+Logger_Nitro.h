@@ -1,52 +1,33 @@
 //
-//  NSString+Logger_Nitro.h
+//  NTRLogging.h
 //  NitroMisc
+//
+// Logging utilities.
+//
+// This file offers logging macros that will be stripped out of your code when the DEBUG preprocessor macro
+// is not defined or is false. This way, log messages will be kept in your development/testing code, but can be
+// removed from your production code almost automatically: just remove the DEBUG preprocessor macro on your
+// production target settings (it should not be there, anyway =P ).
+//
+// This approach is much better than leaving NSLog calls all over your code, since there will be no runtime
+// overhead. Afterall, the calls will not even exist in your executable. In addition to that, you will reduce
+// compilation and linking times.
 //
 //  Created by Daniel L. Alves on 09/04/11.
 //  Copyright (c) 2011 Daniel L. Alves. All rights reserved.
 //
 
-#ifndef NITRO_NSSTRING_LOGGER_H
-#define NITRO_NSSTRING_LOGGER_H
+#ifndef NITRO_LOGGING_H
+#define NITRO_LOGGING_H
 
 #import <Foundation/Foundation.h>
-
-/**
- *  Logging utilities.
- *
- *  This category offer logging macros that will be stripped out of your code when the DEBUG preprocessor macro
- *  is not defined or is false. This way, log messages will be kept in your development/testing code, but can be
- *  removed from your production code almost automatically: just remove the DEBUG preprocessor macro on your
- *  production target settings (it should not be there, anyway =P ).
- *
- *  This approach is much better than leaving NSLog calls all over your code, since there will be no runtime
- *  overhead. Afterall, the calls will not even exist in your executable. In addition to that, you will reduce
- *  compilation and linking times.
- */
-@interface NSString( Logger_Nitro )
-
-/**
- *  Logs an error message to the Apple System Log facility. See NSLog and NSLogv for more info.
- *
- *  YOU SHOULD NOT CALL THIS METHOD DIRECTLY! Instead, use the LOG* macros, since they offer all the
- *  compilation, linking and code generation benefits described on this category documentation.
- *
- *  @param format  A format string. See “Formatting String Objects” (https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Strings/Articles/FormatStrings.html)
- *                 for examples of how to use this method, and “String Format Specifiers” (https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html)
- *                 for a list of format specifiers. This value must not be nil. If it is, a 
- *                 NSInvalidArgumentException will be raised.
- *
- *  @param ...  A comma-separated list of arguments to substitute into format.
- */
-+( void )nitroLog:( NSString * )format, ...;
-
-@end
 
 /**
  *  Logs a generic message to the Apple System Log facility. See NSLog and NSLogv for more info.
  *
  *  When the DEBUG preprocessor macro is not defined or is false, calls to this macro will be stripped out
- *  of your code, generating no compilation, linking or binary overhead.
+ *  of your code, generating no compilation, linking or binary overhead. NTR_LOG also comes with the bonus
+ *  of prepending the log message wwith the method name from which it was called.
  *
  *  The only downside of this macro is that it cannot be called directly with a non-constant NSString as
  *  the format parameter. That is:
