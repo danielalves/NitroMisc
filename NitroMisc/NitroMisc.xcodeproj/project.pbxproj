@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1231A430197998A8003BF6AD /* NTRMacrosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A42F197998A8003BF6AD /* NTRMacrosTests.m */; };
+		1231A4351979CC77003BF6AD /* NitroNSBundleUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A4341979CC77003BF6AD /* NitroNSBundleUtilsTests.m */; };
+		1231A4381979D0EF003BF6AD /* NitroNSErrorUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A4361979D0EF003BF6AD /* NitroNSErrorUtilsTests.m */; };
+		1231A4391979D0EF003BF6AD /* NitroNSInvocationUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A4371979D0EF003BF6AD /* NitroNSInvocationUtilsTests.m */; };
+		1231A43B1979D2E4003BF6AD /* NTRSynthesizeSingletonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A43A1979D2E4003BF6AD /* NTRSynthesizeSingletonTests.m */; };
 		128E5BE4197813C6002F9447 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128E5BE3197813C6002F9447 /* Foundation.framework */; };
 		128E5BE9197813C6002F9447 /* NitroMisc.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 128E5BE8197813C6002F9447 /* NitroMisc.h */; };
 		128E5BF2197813C6002F9447 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128E5BF1197813C6002F9447 /* XCTest.framework */; };
@@ -45,6 +49,10 @@
 
 /* Begin PBXFileReference section */
 		1231A42F197998A8003BF6AD /* NTRMacrosTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTRMacrosTests.m; sourceTree = "<group>"; };
+		1231A4341979CC77003BF6AD /* NitroNSBundleUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroNSBundleUtilsTests.m; sourceTree = "<group>"; };
+		1231A4361979D0EF003BF6AD /* NitroNSErrorUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroNSErrorUtilsTests.m; sourceTree = "<group>"; };
+		1231A4371979D0EF003BF6AD /* NitroNSInvocationUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroNSInvocationUtilsTests.m; sourceTree = "<group>"; };
+		1231A43A1979D2E4003BF6AD /* NTRSynthesizeSingletonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTRSynthesizeSingletonTests.m; sourceTree = "<group>"; };
 		128E5BE0197813C6002F9447 /* libNitroMisc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNitroMisc.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		128E5BE3197813C6002F9447 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		128E5BE8197813C6002F9447 /* NitroMisc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NitroMisc.h; sourceTree = "<group>"; };
@@ -139,8 +147,12 @@
 		128E5BF9197813C6002F9447 /* NitroMiscTests */ = {
 			isa = PBXGroup;
 			children = (
+				1231A4341979CC77003BF6AD /* NitroNSBundleUtilsTests.m */,
+				1231A4361979D0EF003BF6AD /* NitroNSErrorUtilsTests.m */,
+				1231A4371979D0EF003BF6AD /* NitroNSInvocationUtilsTests.m */,
 				128E5C1B1979857B002F9447 /* NTRLoggingTests.m */,
 				1231A42F197998A8003BF6AD /* NTRMacrosTests.m */,
+				1231A43A1979D2E4003BF6AD /* NTRSynthesizeSingletonTests.m */,
 			);
 			path = NitroMiscTests;
 			sourceTree = "<group>";
@@ -275,7 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1231A4391979D0EF003BF6AD /* NitroNSInvocationUtilsTests.m in Sources */,
+				1231A4351979CC77003BF6AD /* NitroNSBundleUtilsTests.m in Sources */,
+				1231A43B1979D2E4003BF6AD /* NTRSynthesizeSingletonTests.m in Sources */,
 				128E5C1C1979857B002F9447 /* NTRLoggingTests.m in Sources */,
+				1231A4381979D0EF003BF6AD /* NitroNSErrorUtilsTests.m in Sources */,
 				1231A430197998A8003BF6AD /* NTRMacrosTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

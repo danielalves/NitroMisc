@@ -2,7 +2,7 @@
 //  NTRMacrosTests.m
 //  NitroMiscTests
 //
-//  Created by Daniel L. Alves on 18/7/14.
+//  Created by Daniel L. Alves on 18/07/14.
 //  Copyright (c) 2014 Daniel L. Alves. All rights reserved.
 //
 
@@ -22,6 +22,8 @@
 #pragma mark - Implementation
 
 @implementation NTRMacrosTests
+
+#pragma mark - SuppressPerformSelectorLeakWarning tests
 
 -( void )test_SuppressPerformSelectorLeakWarning_suppresses_warning
 {

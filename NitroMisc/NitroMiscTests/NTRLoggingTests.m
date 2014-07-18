@@ -23,6 +23,8 @@
 
 @implementation NitroNSStringLoggerTests
 
+#pragma mark - NTR_LOG tests
+
 -( void )test_NTR_LOG_compiles_with_constant_string_format_and_no_ellipsis_paramaterers
 {
     NTR_LOG( @"Hello!" );
@@ -53,15 +55,21 @@
     [self assertDidLogMessage: expected afterRunningLogMacroInsideBlock: ^{ NTR_LOG( @"test" ); }];
 }
 
+#pragma mark - NTR_LOGI tests
+
 -( void )test_NTR_LOGI_prepends_INFO_string
 {
     [self assertDidLogMessage: @"INFO: test" afterRunningLogMacroInsideBlock: ^{ NTR_LOGI( @"test" ); }];
 }
 
+#pragma mark - NTR_LOGW tests
+
 -( void )test_NTR_LOGW_prepends_WARNING_string
 {
     [self assertDidLogMessage: @"WARNING: test" afterRunningLogMacroInsideBlock: ^{ NTR_LOGW( @"test" ); }];
 }
+
+#pragma mark - NTR_LOGE tests
 
 -( void )test_NTR_LOGE_prepends_ERROR_string
 {
