@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		122CD9B1197DBA65004D67F3 /* NitroNSBundleUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A4341979CC77003BF6AD /* NitroNSBundleUtilsTests.m */; };
+		122CD9B2197DBB8C004D67F3 /* NitroMiscTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1231A43D197D5214003BF6AD /* NitroMiscTests-Info.plist */; };
 		1231A430197998A8003BF6AD /* NTRMacrosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A42F197998A8003BF6AD /* NTRMacrosTests.m */; };
-		1231A4351979CC77003BF6AD /* NitroNSBundleUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A4341979CC77003BF6AD /* NitroNSBundleUtilsTests.m */; };
 		1231A4381979D0EF003BF6AD /* NitroNSErrorUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A4361979D0EF003BF6AD /* NitroNSErrorUtilsTests.m */; };
 		1231A4391979D0EF003BF6AD /* NitroNSInvocationUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A4371979D0EF003BF6AD /* NitroNSInvocationUtilsTests.m */; };
 		1231A43B1979D2E4003BF6AD /* NTRSynthesizeSingletonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A43A1979D2E4003BF6AD /* NTRSynthesizeSingletonTests.m */; };
+		1231A474197D5DA3003BF6AD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1231A473197D5DA3003BF6AD /* CoreFoundation.framework */; };
 		128E5BE4197813C6002F9447 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128E5BE3197813C6002F9447 /* Foundation.framework */; };
 		128E5BE9197813C6002F9447 /* NitroMisc.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 128E5BE8197813C6002F9447 /* NitroMisc.h */; };
 		128E5BF2197813C6002F9447 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128E5BF1197813C6002F9447 /* XCTest.framework */; };
@@ -53,6 +55,8 @@
 		1231A4361979D0EF003BF6AD /* NitroNSErrorUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroNSErrorUtilsTests.m; sourceTree = "<group>"; };
 		1231A4371979D0EF003BF6AD /* NitroNSInvocationUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroNSInvocationUtilsTests.m; sourceTree = "<group>"; };
 		1231A43A1979D2E4003BF6AD /* NTRSynthesizeSingletonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTRSynthesizeSingletonTests.m; sourceTree = "<group>"; };
+		1231A43D197D5214003BF6AD /* NitroMiscTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NitroMiscTests-Info.plist"; sourceTree = "<group>"; };
+		1231A473197D5DA3003BF6AD /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		128E5BE0197813C6002F9447 /* libNitroMisc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNitroMisc.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		128E5BE3197813C6002F9447 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		128E5BE8197813C6002F9447 /* NitroMisc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NitroMisc.h; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				128E5BF8197813C6002F9447 /* libNitroMisc.a in Frameworks */,
+				1231A474197D5DA3003BF6AD /* CoreFoundation.framework in Frameworks */,
 				128E5BF3197813C6002F9447 /* Foundation.framework in Frameworks */,
 				128E5BF2197813C6002F9447 /* XCTest.framework in Frameworks */,
 				FE6929E5313F4884A151E917 /* libPods-NitroMiscTests.a in Frameworks */,
@@ -96,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1231A43C197D51F8003BF6AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1231A43D197D5214003BF6AD /* NitroMiscTests-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		128E5BD7197813C6002F9447 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +132,7 @@
 		128E5BE2197813C6002F9447 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1231A473197D5DA3003BF6AD /* CoreFoundation.framework */,
 				128E5C1919798513002F9447 /* UIKit.framework */,
 				128E5BE3197813C6002F9447 /* Foundation.framework */,
 				128E5BF1197813C6002F9447 /* XCTest.framework */,
@@ -147,6 +161,7 @@
 		128E5BF9197813C6002F9447 /* NitroMiscTests */ = {
 			isa = PBXGroup;
 			children = (
+				1231A43C197D51F8003BF6AD /* Supporting Files */,
 				1231A4341979CC77003BF6AD /* NitroNSBundleUtilsTests.m */,
 				1231A4361979D0EF003BF6AD /* NitroNSErrorUtilsTests.m */,
 				1231A4371979D0EF003BF6AD /* NitroNSInvocationUtilsTests.m */,
@@ -234,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122CD9B2197DBB8C004D67F3 /* NitroMiscTests-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,8 +303,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122CD9B1197DBA65004D67F3 /* NitroNSBundleUtilsTests.m in Sources */,
 				1231A4391979D0EF003BF6AD /* NitroNSInvocationUtilsTests.m in Sources */,
-				1231A4351979CC77003BF6AD /* NitroNSBundleUtilsTests.m in Sources */,
 				1231A43B1979D2E4003BF6AD /* NTRSynthesizeSingletonTests.m in Sources */,
 				128E5C1C1979857B002F9447 /* NTRLoggingTests.m in Sources */,
 				1231A4381979D0EF003BF6AD /* NitroNSErrorUtilsTests.m in Sources */,
@@ -388,6 +404,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/NitroMisc.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "NitroMisc/NitroMisc-Info.plist";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -399,6 +416,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/NitroMisc.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "NitroMisc/NitroMisc-Info.plist";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -419,12 +437,15 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				INFOPLIST_FILE = "NitroMiscTests/NitroMiscTests-Info.plist";
+				INFOPLIST_OUTPUT_FORMAT = "same-as-input";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
 					XCTest,
 				);
+				PLIST_FILE_OUTPUT_FORMAT = "same-as-input";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -440,12 +461,15 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "NitroMiscTests/NitroMiscTests-Info.plist";
+				INFOPLIST_OUTPUT_FORMAT = "same-as-input";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
 					XCTest,
 				);
+				PLIST_FILE_OUTPUT_FORMAT = "same-as-input";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};

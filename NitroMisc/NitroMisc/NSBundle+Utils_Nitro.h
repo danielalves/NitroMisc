@@ -33,17 +33,18 @@
  *  Searches the bundle and reads all key-value pairs contained in a property list into a dictionary.
  *
  *  @param name The name of the plist file without its extension. Ex: for a file named 'Info.plist',
- *  you should pass @"Info"
+ *              you should pass @"Info"
+ *
+ *  @param error If the method does not complete successfully, upon return contains an NSError object
+ *               that describes the problem.
  *
  *  @return A dictionary containing all key-value pairs of the specified property list, or nil
- *  if the plist is not found
- *
- *  @throws NSInternalInconsistencyException if the property list is invalid or corrupted
+ *          if the plist is not found or invalid
  *
  *  @see applicationName
  *  @see applicationVersion
  */
--( NSDictionary * )readPropertyListWithName:( NSString * )name;
+-( NSDictionary * )readPropertyListWithName:( NSString * )name error:( out NSError ** )error;
 
 /**
  *  Reads a bundle file entirely and returns its content as a string.

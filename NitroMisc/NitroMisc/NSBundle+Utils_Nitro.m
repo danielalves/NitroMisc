@@ -25,8 +25,14 @@
     return [[NSBundle mainBundle] objectForInfoDictionaryKey: ( NSString * ) kCFBundleVersionKey];
 }
 
--( NSDictionary * )readPropertyListWithName:( NSString * )name
+-( NSDictionary * )readPropertyListWithName:( NSString * )name error:( out NSError ** )error
 {
+    if( name.length == 0 )
+        return nil;
+    
+    if( [name hasSuffix: @".plist"] )
+        name = [name substringWithRange: NSMakeRange( 0, name.length - @".plist".length )];
+        
 	NSString *plistPath = [self pathForResource: name
                                          ofType: @"plist"];
     if( !plistPath )
@@ -36,26 +42,13 @@
     
     if( !plistData )
         return nil;
-    
-    NSString *errorDesc = nil;
-    NSDictionary *plist = ( NSDictionary * )[NSPropertyListSerialization propertyListFromData: plistData
-                                                                             mutabilityOption: NSPropertyListImmutable
+
+    NSDictionary *plist = ( NSDictionary * )[NSPropertyListSerialization propertyListWithData: plistData
+                                                                                      options: NSPropertyListImmutable
                                                                                        format: NULL
-                                                                             errorDescription: &errorDesc];
-
-    if( errorDesc )
-    {
-        NSString *temp = [NSString stringWithString: errorDesc];
-		NSString *errMsg = [NSString stringWithFormat: @"Could not load plist file '%@': %@", name, temp];
-		
-		plist = nil;
-		errorDesc = nil;
-		
-        NTR_LOGE( @"%@", errMsg );
-
-		[NSException raise: NSInternalInconsistencyException format: @"%@", errMsg];
-    }
-	return plist;
+                                                                                        error: error];
+    
+    return ( *error ) ? nil : plist;
 }
 
 -( NSString * )stringWithEncoding:( NSStringEncoding )encoding fromResourceWithName:( NSString * )name type:( NSString * )type
@@ -63,6 +56,9 @@
     NSError *error = nil;
     
     NSString *path = [self pathForResource: name ofType: type];
+    if( !path )
+        return nil;
+    
     NSString *str = [NSString stringWithContentsOfFile: path encoding: encoding error: &error];
     
     if( error )
