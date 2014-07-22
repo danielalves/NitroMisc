@@ -9,7 +9,48 @@ NitroMisc
 Examples
 --------
 
-**1) Logging macros**
+**1) `NSBundle` utilities**
+
+Every app tasks at one place:
+
+```objc
+// Returns the value associated with the `kCFBundleNameKey` key in the main bundle information property list
+NSString *myAppName = [NSBundle applicationName];
+
+// Returns the value associated with the `kCFBundleVersionKey` key in the main bundle information property list
+NSString *myAppVersion = [NSBundle applicationVersion];
+
+// Reads a plist as a `NSDictionary`
+NSError *error = nil;
+[anyNSBundleObject readPropertyListWithName: @"myPlistNameWithOrWithoutExtension"
+                                      error: &error];
+
+// Reads any file as a `NSString`
+NSString *fileContent = [anyNSBundleObject stringWithEncoding: NSUTF8StringEncoding
+                                         fromResourceWithName: @"yourFileName"
+                                                         type: @"yourFileExtension"];
+```
+
+**2) Shorter `NSError` instantiation**
+
+Set only the `localizedDescription` key 90% of the time? There you go:
+
+```objc
+NSError *muchBetterError = [NSError errorWithDomain: kMyAppNSErrorDomain
+                                               code: kMyAppShouldNotHappenErrorCode
+                               localizedDescription: @"A localized description"];
+```
+
+**3) Shorter NSInvocation instantiation**
+
+Boilerplate code to create a `NSInvocation` object? Please:
+
+```objc
+    NSInvocation *niceInvocation = [NSInvocation invocationForSelector: @selector( invocationSelector )
+                                                            withTarget: self];
+```
+
+**4) Logging macros**
 
 Macros that log a generic message to the Apple System Log facility using `NSLog`.
 When the `DEBUG` preprocessor macro is not defined or is false, calls to these macros will be stripped out of your code, generating no compilation, linking or binary overhead. They also come with the bonus of prepending the log message with the method name from which it was called.
@@ -23,7 +64,7 @@ NTR_LOGW( @"%@ Simpson", @"Bart" );  // Logs "WARNING: Bart Simpson"
 NTR_LOGE( @"%@ Simpson", @"Homer" ); // Logs "ERROR: Homer Simpson"
 ```
 
-**2) Singleton macros**
+**5) Singleton macros**
 
 Tired of copy and pasting singleton generation macros all over your projects? But no more. **NitroMisc** has all you need and optmized for ARC code.
 
@@ -59,7 +100,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS( FancySingletonClass, theOne )
 FancySingletonClass.theOne
 ```
 
-**3) Helpful macros**
+**6) Helpful macros**
 
 Use the `SuppressPerformSelectorLeakWarning` macro to suppress "performSelector may cause a leak because its selector is unknown" warnings. Remember: This should only be used when you are sure the object responds to the selector.
 
