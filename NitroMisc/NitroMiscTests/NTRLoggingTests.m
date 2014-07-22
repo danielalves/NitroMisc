@@ -87,7 +87,7 @@
     FILE *test = fopen( lowlevelFilePath, "w+" );
     if( !test )
     {
-        XCTFail( @"Could not create helper file" );
+        XCTFail( @"Could not create helper file at %s - %s", lowlevelFilePath, strerror(errno));
         return;
     }
     
@@ -104,7 +104,7 @@
     NSString *str = [NSString stringWithContentsOfFile: filePath encoding: NSUTF8StringEncoding error: &error];
     if( error )
     {
-        XCTFail( @"Could not read helper file" );
+        XCTFail( @"Could not read helper file at %@ - %@", filePath, [error localizedDescription] );
         return;
     }
 
