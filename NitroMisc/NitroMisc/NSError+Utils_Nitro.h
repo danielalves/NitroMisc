@@ -16,13 +16,15 @@
 /**
  *  Creates a NSError object with the specified domain, code and localized description.
  *
- *  @param domain               A string containing the error domain.
+ *  @param domain               A string containing the error domain. Must not be nil.
  *  @param code                 The error code. Note that error codes are domain specific.
  *  @param localizedDescription A localized string representation of the error that, if present, will be returned by the
  *                              localizedDescription method. This value will be set in the NSError object userInfo dictionary
- *                              with the NSLocalizedDescriptionKey.
+ *                              with the NSLocalizedDescriptionKey. May be nil.
  *
  *  @return A NSError object with the specified domain, code and localized description.
+ *
+ *  @throws NSInvalidArgumentException if domain is nil
  */
 +( NSError * )errorWithDomain:( NSString * )domain
                          code:( NSInteger )code
