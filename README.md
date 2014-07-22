@@ -14,10 +14,12 @@ Examples
 Every app tasks at one place:
 
 ```objc
-// Returns the value associated with the `kCFBundleNameKey` key in the main bundle information property list
+// Returns the value associated with the `kCFBundleNameKey` key in the main bundle information 
+// property list
 NSString *myAppName = [NSBundle applicationName];
 
-// Returns the value associated with the `kCFBundleVersionKey` key in the main bundle information property list
+// Returns the value associated with the `kCFBundleVersionKey` key in the main bundle 
+// information property list
 NSString *myAppVersion = [NSBundle applicationVersion];
 
 // Reads a plist as a `NSDictionary`
@@ -46,8 +48,8 @@ NSError *muchBetterError = [NSError errorWithDomain: kMyAppNSErrorDomain
 Boilerplate code to create a `NSInvocation` object? Please:
 
 ```objc
-    NSInvocation *niceInvocation = [NSInvocation invocationForSelector: @selector( invocationSelector )
-                                                            withTarget: self];
+NSInvocation *niceInvocation = [NSInvocation invocationForSelector: @selector( invocationSelector )
+                                                        withTarget: self];
 ```
 
 **4) Logging macros**
