@@ -9,5 +9,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/danielalves/NitroMisc.git", :tag => s.version.to_s }
   s.platform     = :ios
   s.source_files  = "NitroMisc/NitroMisc"
+  s.xcconfig     = { 'OTHER_LDFLAGS' => '-ObjC' }
   s.requires_arc = true
 end
