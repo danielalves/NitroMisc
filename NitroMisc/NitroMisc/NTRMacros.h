@@ -10,7 +10,7 @@
 #define NITRO_MACROS_H
 
 /**
- *  This macro suppresses the "performSelector may cause a leak because its selector is unknown" warnings
+ *  This macro suppresses "performSelector may cause a leak because its selector is unknown" warnings
  *  fired by performSelector* calls. This should only be used when you are sure the object responds to
  *  the selector. Example:
  *

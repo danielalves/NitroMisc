@@ -27,7 +27,7 @@
  *
  *  When the DEBUG preprocessor macro is not defined or is false, calls to this macro will be stripped out
  *  of your code, generating no compilation, linking or binary overhead. NTR_LOG also comes with the bonus
- *  of prepending the log message wwith the method name from which it was called.
+ *  of prepending the log message with the method name from which it was called.
  *
  *  The only downside of this macro is that it cannot be called directly with a non-constant NSString as
  *  the format parameter. That is:
