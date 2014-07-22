@@ -41,7 +41,7 @@ NSError *muchBetterError = [NSError errorWithDomain: kMyAppNSErrorDomain
                                localizedDescription: @"A localized description"];
 ```
 
-**3) Shorter NSInvocation instantiation**
+**3) Shorter `NSInvocation` instantiation**
 
 Boilerplate code to create a `NSInvocation` object? Please:
 
