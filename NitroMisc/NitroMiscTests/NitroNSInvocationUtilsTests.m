@@ -33,22 +33,40 @@
 
 -( void )test_invocationForSelector_withTarget_creates_invocation_object
 {
+    XCTAssertNotNil( [NSInvocation invocationForSelector: @selector( invocationSelector ) withTarget: self] );
+}
+
+-( void )test_invocationForSelector_withTarget_throws_NSInvalidArgumentException_on_nil_targets
+{
+    XCTAssertThrowsSpecificNamed( [NSInvocation invocationForSelector: @selector( invocationSelector ) withTarget: nil],
+                                  NSException,
+                                  NSInvalidArgumentException );
+}
+
+-( void )test_invocationForSelector_withTarget_throws_NSInvalidArgumentException_on_nil_selectors
+{
+    XCTAssertThrowsSpecificNamed( [NSInvocation invocationForSelector: nil withTarget: self],
+                                  NSException,
+                                  NSInvalidArgumentException );
 }
 
 -( void )test_invocationForSelector_withTarget_sets_invocation_selector
 {
+    NSInvocation *invocation = [NSInvocation invocationForSelector: @selector( invocationSelector ) withTarget: self];
+    XCTAssertEqual( invocation.selector, @selector( invocationSelector ) );
 }
 
 -( void )test_invocationForSelector_withTarget_sets_invocation_target
 {
+    NSInvocation *invocation = [NSInvocation invocationForSelector: @selector( invocationSelector ) withTarget: self];
+    XCTAssertEqualObjects( invocation.target, self );
 }
 
--( void )test_invocationForSelector_withTarget_works_with_nil_selector
-{
-}
+#pragma mark - Helpers
 
--( void )test_invocationForSelector_withTarget_works_with_nil_target
+-( void )invocationSelector
 {
+    // Empty. Just for tests.
 }
 
 @end
