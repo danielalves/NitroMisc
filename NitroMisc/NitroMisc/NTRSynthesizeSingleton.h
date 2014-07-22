@@ -35,7 +35,6 @@ static classname *shared##classname = nil;                                      
                                                                                                     \
 +( void )registerForCleanup                                                                         \
 {                                                                                                   \
-NSLog( @">>>>>>>>> Class %s registered for cleanup", #classname );\
     [[NSNotificationCenter defaultCenter] addObserver: self                                         \
                                           selector: @selector( cleanupFromTerminate )               \
                                           name: UIApplicationWillTerminateNotification              \
