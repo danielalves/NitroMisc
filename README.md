@@ -4,7 +4,13 @@ NitroMisc
 [![Platform](http://cocoapod-badges.herokuapp.com/p/NitroMisc/badge.png)](http://cocoadocs.org/docsets/NitroMisc)
 [![TravisCI](https://travis-ci.org/danielalves/NitroMisc.svg?branch=master)](https://travis-ci.org/danielalves/NitroMisc)
 
-**NitroMisc** offers a lot of helpful code missing in iOS foundation and uikit classes in addition to utility macros.
+**NitroMisc** offers a lot of helpful code missing in iOS foundation and uikit classes in addition to utility macros. You will find:
+- `NSBundle` utilities
+- Shorter `NSError` instantiation
+- Shorter `NSInvocation` instantiation
+- Logging macros
+- Singleton macros
+- Helpful macros
 
 Examples
 --------
