@@ -11,92 +11,77 @@
 //  appreciated but not required.
 //
 //  See:
-//    - http://pixelchild.com.au/post/17936761797/objective-c-singleton-macro-that-supports-both-arc
+//    - http://www.cocoawithlove.com/2008/11/singletons-appdelegates-and-top-level.html
 //
 
 #ifndef NITRO_SYNTHESIZE_SINGLETON_H
 #define NITRO_SYNTHESIZE_SINGLETON_H
+
+#import <UIKit/UIKit.h>
 
 // To use in header files
 #define DECLARE_SINGLETON_FOR_CLASS( className, accessorname ) +( className * )accessorname;
 #define DEFAULT_DECLARE_SINGLETON_FOR_CLASS( className ) DECLARE_SINGLETON_FOR_CLASS( className, sharedInstance )
 
 // To use in implementation files
-#if __has_feature( objc_arc )
-
-#define SYNTHESIZE_SINGLETON_FOR_CLASS( classname, accessorname )           \
-                                                                            \
-+( classname * )accessorname                                                \
-{                                                                           \
-    static classname *accessorname = nil;                                   \
-    static dispatch_once_t onceToken;                                       \
-                                                                            \
-    dispatch_once( &onceToken, ^{                                           \
-        accessorname = [[classname alloc] init];                            \
-    });                                                                     \
-                                                                            \
-    return accessorname;                                                    \
+#define SYNTHESIZE_SINGLETON_FOR_CLASS( classname, accessorname )                                   \
+                                                                                                    \
+static classname *shared##classname = nil;                                                          \
+                                                                                                    \
++( void )cleanupFromTerminate                                                                       \
+{                                                                                                   \
+    shared##classname = nil;                                                                        \
+}                                                                                                   \
+                                                                                                    \
++( void )registerForCleanup                                                                         \
+{                                                                                                   \
+NSLog( @">>>>>>>>> Class %s registered for cleanup", #classname );\
+    [[NSNotificationCenter defaultCenter] addObserver: self                                         \
+                                          selector: @selector( cleanupFromTerminate )               \
+                                          name: UIApplicationWillTerminateNotification              \
+                                          object: nil];                                             \
+}                                                                                                   \
+                                                                                                    \
+-( void )dealloc                                                                                    \
+{                                                                                                   \
+    [[NSNotificationCenter defaultCenter] removeObserver: self                                      \
+                                                    name: UIApplicationWillTerminateNotification    \
+                                                  object: nil];                                     \
+}                                                                                                   \
+                                                                                                    \
++( classname * )accessorname                                                                        \
+{                                                                                                   \
+    __block classname *temp;                                                                        \
+    temp = shared##classname;                                                                       \
+    if( !temp )                                                                                     \
+    {                                                                                               \
+        static dispatch_once_t p;                                                                   \
+        dispatch_once( &p, ^{                                                                       \
+            shared##classname = [[self alloc] init];                                                \
+            temp = shared##classname;                                                               \
+        });                                                                                         \
+    }                                                                                               \
+    return temp;                                                                                    \
+}                                                                                                   \
+                                                                                                    \
++( id )allocWithZone:( NSZone * )zone                                                               \
+{                                                                                                   \
+    static dispatch_once_t p;                                                                       \
+                                                                                                    \
+    dispatch_once( &p, ^{                                                                           \
+        if( shared##classname == nil )                                                              \
+        {                                                                                           \
+            shared##classname = [super allocWithZone: zone];                                        \
+            [self registerForCleanup];                                                              \
+        }                                                                                           \
+    });                                                                                             \
+    return shared##classname;                                                                       \
+}                                                                                                   \
+                                                                                                    \
+-( id )copyWithZone:( NSZone * )zone                                                                \
+{                                                                                                   \
+    return self;                                                                                    \
 }
-
-#else
-
-#define SYNTHESIZE_SINGLETON_FOR_CLASS( classname, accessorname )           \
-                                                                            \
-    static classname *shared##classname = nil;                              \
-                                                                            \
-    +( void )cleanupFromTerminate                                           \
-    {                                                                       \
-        classname *temp = shared##classname;                                \
-        shared##classname = nil;                                            \
-        [temp dealloc];                                                     \
-    }                                                                       \
-                                                                            \
-    +( void )registerForCleanup                                             \
-    {                                                                       \
-        [[NSNotificationCenter defaultCenter] addObserver: self             \
-        selector: @selector( cleanupFromTerminate )                         \
-        name: UIApplicationWillTerminateNotification                        \
-        object: nil];                                                       \
-    }                                                                       \
-                                                                            \
-    +( classname * )accessorname                                            \
-    {                                                                       \
-        static dispatch_once_t p;                                           \
-        dispatch_once( &p,                                                  \
-        ^{                                                                  \
-            if( shared##classname == nil )                                  \
-            {                                                               \
-                NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init]; \
-                shared##classname = [[self alloc] init];                    \
-                [self registerForCleanup];                                  \
-                [pool drain];                                               \
-            }                                                               \
-        });                                                                 \
-        return shared##classname;                                           \
-    }                                                                       \
-                                                                            \
-    +( id )allocWithZone:( NSZone * )zone                                   \
-    {                                                                       \
-        static dispatch_once_t p;                                           \
-        __block classname *temp = nil;                                      \
-                                                                            \
-        dispatch_once( &p,                                                  \
-        ^{                                                                  \
-            if( shared##classname == nil )                                  \
-            {                                                               \
-                temp = shared##classname = [super allocWithZone: zone];     \
-            }                                                               \
-        });                                                                 \
-        return temp;                                                        \
-    }                                                                       \
-                                                                            \
-    -( id )copyWithZone:( NSZone * )zone { return self; }                   \
-    -( id )retain { return self; }                                          \
-    -( NSUInteger )retainCount { return NSUIntegerMax; }                    \
-    -( oneway void )release { }                                             \
-    -( id )autorelease { return self; }
-
-#endif
 
 #define DEFAULT_SYNTHESIZE_SINGLETON_FOR_CLASS( classname ) SYNTHESIZE_SINGLETON_FOR_CLASS( classname, sharedInstance )
 
