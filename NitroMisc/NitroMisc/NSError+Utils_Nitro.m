@@ -16,7 +16,11 @@
                          code:( NSInteger )code
          localizedDescription:( NSString * )localizedDescription
 {
-    return [NSError errorWithDomain: domain code: code userInfo: @{ NSLocalizedDescriptionKey: localizedDescription }];
+    NSDictionary *userInfo = nil;
+    if( localizedDescription )
+        userInfo = @{ NSLocalizedDescriptionKey: localizedDescription };
+    
+    return [NSError errorWithDomain: domain code: code userInfo: userInfo];
 }
 
 @end
