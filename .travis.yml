@@ -1,0 +1,9 @@
+language: objective-c
+before_script:
+    - brew update
+    - brew install xctool && brew cleanup xctool
+    - gem install cocoapods
+script:
+    - cd NitroMisc
+    - pod install
+    - xctool -workspace NitroMisc.xcworkspace -sdk iphonesimulator -scheme NitroMisc test
