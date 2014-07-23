@@ -85,7 +85,7 @@
     if( ![[NSFileManager defaultManager] fileExistsAtPath: documentsFolderPath] )
     {
         NSError *error = nil;
-        if( ![[NSFileManager defaultManager] createDirectoryAtURL: [NSURL URLWithString: documentsFolderPath]
+        if( ![[NSFileManager defaultManager] createDirectoryAtURL: [NSURL fileURLWithPath: documentsFolderPath isDirectory: YES]
                                       withIntermediateDirectories: YES
                                                        attributes: nil
                                                             error: &error] )
