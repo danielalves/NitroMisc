@@ -142,7 +142,7 @@
     remove( lowlevelFilePath );
 
     NSString *formattedSuffix = [NSString stringWithFormat: @"%@\n", message];
-    XCTAssertTrue( [str hasSuffix: formattedSuffix], @"String was %@", str );
+    XCTAssertTrue( [str hasSuffix: formattedSuffix], @"\n\nString was '%@' (length: %d)\n\n", ( str ? str : @"<nil>"), str.length );
 }
 
 @end
