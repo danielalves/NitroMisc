@@ -6,4 +6,4 @@ before_script:
 script:
     - cd NitroMisc
     - pod install
-    - xctool -workspace NitroMisc.xcworkspace -sdk iphonesimulator -scheme NitroMisc test
+    - xctool -workspace NitroMisc.xcworkspace -sdk iphonesimulator -scheme NitroMisc test GCC_PREPROCESSOR_DEFINITIONS="TESTS_XCTOOL_STDERR_REDIRECT_BUG=1 TESTS_CREATE_DOCS_DIR=1"
