@@ -10,7 +10,7 @@ NitroMisc
 - Shorter `NSInvocation` instantiation
 - Logging macros
 - Singleton macros
-- Helpful macros
+- Silly warnings suppressing macros
 
 Examples
 --------
@@ -108,7 +108,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS( FancySingletonClass, theOne )
 FancySingletonClass.theOne
 ```
 
-**6) Helpful macros**
+**6) Silly warnings suppressing macros**
 
 Use the `SuppressPerformSelectorLeakWarning` macro to suppress "performSelector may cause a leak because its selector is unknown" warnings. Remember: This should only be used when you are sure the object responds to the selector.
 
