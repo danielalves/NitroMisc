@@ -106,7 +106,18 @@
     }
     
     int stderrCopy = dup( STDERR_FILENO );
-    dup2( fileno(test),fileno( stderr ));
+    if( stderrCopy < 0 )
+    {
+        XCTFail( @"'dup' failed: %s", strerror(errno));
+        return;
+    }
+    
+    int ret = dup2( fileno(test),fileno( stderr ));
+    if( ret < 0 )
+    {
+        XCTFail( @"'dup2' failed: %s", strerror(errno));
+        return;
+    }
     
     logMacroBlock();
     
