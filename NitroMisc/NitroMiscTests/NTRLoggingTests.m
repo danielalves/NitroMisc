@@ -81,6 +81,20 @@
 -( void )assertDidLogMessage:( NSString * )message afterRunningLogMacroInsideBlock:( void (^)( void ))logMacroBlock
 {
     NSString *documentsFolderPath = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES ) lastObject];
+    
+    if( ![[NSFileManager defaultManager] fileExistsAtPath: documentsFolderPath] )
+    {
+        NSError *error = nil;
+        if( ![[NSFileManager defaultManager] createDirectoryAtURL: [NSURL URLWithString: documentsFolderPath]
+                                      withIntermediateDirectories: YES
+                                                       attributes: nil
+                                                            error: &error] )
+        {
+            XCTFail( @"Could not create dir %@ - %@", documentsFolderPath, [error localizedDescription] );
+            return;
+        }
+    }
+
     NSString *filePath = [documentsFolderPath stringByAppendingPathComponent: @"test.txt"];
     
     const char *lowlevelFilePath = [[NSFileManager defaultManager] fileSystemRepresentationWithPath: filePath];
