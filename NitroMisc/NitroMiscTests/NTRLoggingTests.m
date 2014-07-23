@@ -122,7 +122,13 @@
     logMacroBlock();
     
     fclose( test );
-    dup2( stderrCopy, STDERR_FILENO );
+    ret = dup2( stderrCopy, STDERR_FILENO );
+    if( ret < 0 )
+    {
+        XCTFail( @"'dup2' rollback failed: %s", strerror(errno));
+        return;
+    }
+    
     close( stderrCopy );
     
     NSError *error = nil;
