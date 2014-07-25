@@ -1,10 +1,10 @@
 PODS:
-  - Redefine (1.0.5)
+  - Redefine (1.0.6)
 
 DEPENDENCIES:
-  - Redefine
+  - Redefine (~> 1.0.6)
 
 SPEC CHECKSUMS:
-  Redefine: 7fbc20f5c6ff5a6074334a941badd4df27e791c5
+  Redefine: c2467afe11a413a12489887edf382240ca2565e0
 
 COCOAPODS: 0.33.1

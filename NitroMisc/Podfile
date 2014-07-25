@@ -4,5 +4,5 @@ end
 
 target :NitroMiscTests do
     platform :ios, '7.1'
-	pod "Redefine"
+	pod "Redefine", '~> 1.0.6'
 end
