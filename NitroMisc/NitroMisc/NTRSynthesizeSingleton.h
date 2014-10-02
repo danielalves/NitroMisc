@@ -75,6 +75,10 @@ static classname *shared##classname = nil;                                      
 +( void )cleanupFromTerminate                                                                       \
 {                                                                                                   \
     shared##classname = nil;                                                                        \
+                                                                                                    \
+    [[NSNotificationCenter defaultCenter] removeObserver: self                                      \
+                                                    name: UIApplicationWillTerminateNotification    \
+                                                  object: nil];                                     \
 }                                                                                                   \
                                                                                                     \
 +( void )registerForCleanup                                                                         \
@@ -83,13 +87,6 @@ static classname *shared##classname = nil;                                      
                                           selector: @selector( cleanupFromTerminate )               \
                                           name: UIApplicationWillTerminateNotification              \
                                           object: nil];                                             \
-}                                                                                                   \
-                                                                                                    \
--( void )dealloc                                                                                    \
-{                                                                                                   \
-    [[NSNotificationCenter defaultCenter] removeObserver: self                                      \
-                                                    name: UIApplicationWillTerminateNotification    \
-                                                  object: nil];                                     \
 }                                                                                                   \
                                                                                                     \
 +( classname * )accessorname                                                                        \
