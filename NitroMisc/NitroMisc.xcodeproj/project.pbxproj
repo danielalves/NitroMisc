@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		122CD9B1197DBA65004D67F3 /* NitroNSBundleUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A4341979CC77003BF6AD /* NitroNSBundleUtilsTests.m */; };
-		122CD9B2197DBB8C004D67F3 /* NitroMiscTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1231A43D197D5214003BF6AD /* NitroMiscTests-Info.plist */; };
 		1231A430197998A8003BF6AD /* NTRMacrosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A42F197998A8003BF6AD /* NTRMacrosTests.m */; };
 		1231A4381979D0EF003BF6AD /* NitroNSErrorUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A4361979D0EF003BF6AD /* NitroNSErrorUtilsTests.m */; };
 		1231A4391979D0EF003BF6AD /* NitroNSInvocationUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1231A4371979D0EF003BF6AD /* NitroNSInvocationUtilsTests.m */; };
@@ -23,6 +22,7 @@
 		128E5C2719798597002F9447 /* NSBundle+Utils_Nitro.m in Sources */ = {isa = PBXBuildFile; fileRef = 128E5C1E19798597002F9447 /* NSBundle+Utils_Nitro.m */; };
 		128E5C2819798597002F9447 /* NSError+Utils_Nitro.m in Sources */ = {isa = PBXBuildFile; fileRef = 128E5C2019798597002F9447 /* NSError+Utils_Nitro.m */; };
 		128E5C2919798597002F9447 /* NSInvocation+Utils_Nitro.m in Sources */ = {isa = PBXBuildFile; fileRef = 128E5C2219798597002F9447 /* NSInvocation+Utils_Nitro.m */; };
+		12EF3A5A19DDFA3D009EDB56 /* NitroMiscTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1231A43D197D5214003BF6AD /* NitroMiscTests-Info.plist */; };
 		FE6929E5313F4884A151E917 /* libPods-NitroMiscTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BE2FE5B0F846579EE40710 /* libPods-NitroMiscTests.a */; };
 /* End PBXBuildFile section */
 
@@ -218,7 +218,7 @@
 		128E5BD8197813C6002F9447 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Daniel L. Alves";
 				TargetAttributes = {
 					128E5BEF197813C6002F9447 = {
@@ -249,7 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				122CD9B2197DBB8C004D67F3 /* NitroMiscTests-Info.plist in Resources */,
+				12EF3A5A19DDFA3D009EDB56 /* NitroMiscTests-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
