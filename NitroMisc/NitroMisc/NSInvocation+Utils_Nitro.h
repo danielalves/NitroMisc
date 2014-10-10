@@ -23,6 +23,7 @@ FOUNDATION_EXPORT const NSInteger kNitroNSInvovationFirstArgumentIndex;
  *  Creates a NSInvocation object which will fire selector on target when invoked.
  *
  *  @param selector The selector which will be fired by the invocation.
+ *
  *  @param target   The object to assign to the invocation as target. The target is the receiver 
  *                  of the message sent by invoke, that is, the selector parameter.
  *
@@ -30,6 +31,6 @@ FOUNDATION_EXPORT const NSInteger kNitroNSInvovationFirstArgumentIndex;
  *
  *  @throws NSInvalidArgumentException if selector or target is nil.
  */
-+( NSInvocation * )invocationForSelector:( SEL )selector withTarget:( NSObject * )target;
++( NSInvocation * )invocationForSelector:( SEL )selector withTarget:( id )target;
 
 @end

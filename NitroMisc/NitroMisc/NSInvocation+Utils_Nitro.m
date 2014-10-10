@@ -20,7 +20,7 @@ const NSInteger kNitroNSInvovationFirstArgumentIndex = 2;
 
 @implementation NSInvocation( Utils_Nitro )
 
-+( NSInvocation * )invocationForSelector:( SEL )selector withTarget:( NSObject * )target
++( NSInvocation * )invocationForSelector:( SEL )selector withTarget:( id )target
 {
 	NSInvocation *temp = [NSInvocation invocationWithMethodSignature: [target methodSignatureForSelector: selector]];
 	[temp setSelector: selector];

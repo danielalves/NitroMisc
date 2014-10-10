@@ -11,14 +11,34 @@
 // NitroMisc
 #import "NSInvocation+Utils_Nitro.h"
 
+#pragma mark - Defines
+
+#define TNT_TEST_DOUBLE_RETURN_VALUE 105.3
+#define TNT_TEST_NSSTRING_RETURN_VALUE @"invocation test"
+
+#pragma mark - Class Variables
+
+static BOOL classSelectorInvoked;
+
 #pragma mark - Interface
 
 @interface NitroNSInvocationUtilsTests : XCTestCase
+{
+    BOOL instanceSelectorInvoked;
+}
 @end
 
 #pragma mark - Implementation
 
 @implementation NitroNSInvocationUtilsTests
+
+#pragma mark - Tests Lifecycle
+
+-( void )setUp
+{
+    instanceSelectorInvoked = NO;
+    classSelectorInvoked = NO;
+}
 
 #pragma mark - invocationForSelector:withTarget: tests
 
@@ -33,12 +53,12 @@
 
 -( void )test_invocationForSelector_withTarget_creates_invocation_object
 {
-    XCTAssertNotNil( [NSInvocation invocationForSelector: @selector( invocationSelector ) withTarget: self] );
+    XCTAssertNotNil( [NSInvocation invocationForSelector: @selector( invocationSelectorReturningNonPointer ) withTarget: self] );
 }
 
 -( void )test_invocationForSelector_withTarget_throws_NSInvalidArgumentException_on_nil_targets
 {
-    XCTAssertThrowsSpecificNamed( [NSInvocation invocationForSelector: @selector( invocationSelector ) withTarget: nil],
+    XCTAssertThrowsSpecificNamed( [NSInvocation invocationForSelector: @selector( invocationSelectorReturningNonPointer ) withTarget: nil],
                                   NSException,
                                   NSInvalidArgumentException );
 }
@@ -52,21 +72,39 @@
 
 -( void )test_invocationForSelector_withTarget_sets_invocation_selector
 {
-    NSInvocation *invocation = [NSInvocation invocationForSelector: @selector( invocationSelector ) withTarget: self];
-    XCTAssertEqual( invocation.selector, @selector( invocationSelector ) );
+    NSInvocation *invocation = [NSInvocation invocationForSelector: @selector( invocationSelectorReturningNonPointer ) withTarget: self];
+    XCTAssertEqual( invocation.selector, @selector( invocationSelectorReturningNonPointer ) );
 }
 
 -( void )test_invocationForSelector_withTarget_sets_invocation_target
 {
-    NSInvocation *invocation = [NSInvocation invocationForSelector: @selector( invocationSelector ) withTarget: self];
+    NSInvocation *invocation = [NSInvocation invocationForSelector: @selector( invocationSelectorReturningNonPointer ) withTarget: self];
     XCTAssertEqualObjects( invocation.target, self );
+}
+
+-( void )test_invocationForSelector_withTarget_accepts_classes_as_target
+{
+    NSInvocation *invocation = [NSInvocation invocationForSelector: @selector( classInvocationSelector ) withTarget: [self class]];
+    XCTAssertEqualObjects( invocation.target, [self class] );
 }
 
 #pragma mark - Helpers
 
--( void )invocationSelector
+-( double )invocationSelectorReturningNonPointer
 {
-    // Empty. Just for tests.
+    instanceSelectorInvoked = YES;
+    return TNT_TEST_DOUBLE_RETURN_VALUE;
+}
+
+-( NSString * )invocationSelectorReturningPointer
+{
+    instanceSelectorInvoked = YES;
+    return TNT_TEST_NSSTRING_RETURN_VALUE;
+}
+
++( void )classInvocationSelector
+{
+    classSelectorInvoked = YES;
 }
 
 @end
