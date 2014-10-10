@@ -1,3 +1,9 @@
+1.1.0
+-----
+
+- Fixing -invocationForSelector:WithTarget: - must accept classes as target, not only NSObjects
+- Adding +invokeSelector:onTarget:withArguments:returnValue: NSInvocation utility method
+
 1.0.2
 -----
 
