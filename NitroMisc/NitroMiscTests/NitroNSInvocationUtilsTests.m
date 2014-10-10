@@ -88,6 +88,48 @@ static BOOL classSelectorInvoked;
     XCTAssertEqualObjects( invocation.target, [self class] );
 }
 
+#pragma mark - +invokeSelector:onTarget:withArguments:returnValue: tests
+
+-( void )test_invokeSelector_onTarget_withArguments_returnValue_throws_NSInvalidArgumentException_on_nil_targets
+{
+    XCTAssertThrowsSpecificNamed( [NSInvocation invokeSelector: @selector( invocationSelectorReturningNonPointer ) onTarget: nil withArguments: nil returnValue: NULL],
+                                   NSException,
+                                   NSInvalidArgumentException );
+}
+
+-( void )test_nvokeSelector_onTarget_withArguments_returnValue__throws_NSInvalidArgumentException_on_nil_selectors
+{
+    XCTAssertThrowsSpecificNamed( [NSInvocation invokeSelector: nil onTarget: self withArguments: nil returnValue: NULL],
+                                  NSException,
+                                  NSInvalidArgumentException );
+}
+
+-( void )test_invokeSelector_onTarget_withArguments_returnValue_invokes_selector_on_classes
+{
+    [NSInvocation invokeSelector: @selector( classInvocationSelector ) onTarget: [self class] withArguments: nil returnValue: NULL];
+    XCTAssertTrue( classSelectorInvoked );
+}
+
+-( void )test_invokeSelector_onTarget_withArguments_returnValue_invokes_selector_on_instances
+{
+    [NSInvocation invokeSelector: @selector( invocationSelectorReturningNonPointer ) onTarget: self withArguments: nil returnValue: NULL];
+    XCTAssertTrue( instanceSelectorInvoked );
+}
+
+-( void )test_invokeSelector_onTarget_withArguments_returnValue_returns_non_pointer_return_value
+{
+    double ret;
+    [NSInvocation invokeSelector: @selector( invocationSelectorReturningNonPointer ) onTarget: self withArguments: nil returnValue: &ret];
+    XCTAssertEqual( ret, TNT_TEST_DOUBLE_RETURN_VALUE );
+}
+
+-( void )test_invokeSelector_onTarget_withArguments_returnValue_returns_pointer_return_value
+{
+    NSString *ret;
+    [NSInvocation invokeSelector: @selector( invocationSelectorReturningPointer ) onTarget: self withArguments: nil returnValue: &ret];
+    XCTAssertEqualObjects( ret, TNT_TEST_NSSTRING_RETURN_VALUE );
+}
+
 #pragma mark - Helpers
 
 -( double )invocationSelectorReturningNonPointer

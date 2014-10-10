@@ -28,4 +28,20 @@ const NSInteger kNitroNSInvovationFirstArgumentIndex = 2;
 	return temp;
 }
 
++( void )invokeSelector:( SEL )selector onTarget:( id )target withArguments:( NSArray * )arguments returnValue:( out void * )returnValue
+{
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature: [target methodSignatureForSelector: selector]];
+    [invocation setSelector: selector];
+    [invocation setTarget: target];
+
+    NSUInteger nArguments = arguments.count;
+    for( NSUInteger i = 0 ; i < nArguments ; ++i )
+        [invocation setArgument: ( __bridge void * )( arguments[i] ) atIndex: kNitroNSInvovationFirstArgumentIndex+i];
+
+    [invocation invoke];
+
+    if( returnValue )
+        [invocation getReturnValue: returnValue];
+}
+
 @end
